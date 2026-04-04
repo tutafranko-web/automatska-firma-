@@ -1,45 +1,4 @@
 {
-  "model": "claude-opus-4-6",
-  "customInstructions": "Follow the project's CLAUDE.md guidelines. Use concurrent execution for all operations. Prioritize v3 implementation with security-first development, 15-agent swarm coordination, phased performance optimization, and cross-platform helper automation.",
-  "env": {
-    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1",
-    "CLAUDE_FLOW_V3_ENABLED": "true",
-    "CLAUDE_FLOW_HOOKS_ENABLED": "true"
-  },
-  "permissions": {
-    "allow": [
-      "Bash(npx @claude-flow*)",
-      "Bash(npx claude-flow*)",
-      "Bash(node .claude/*)",
-      "Bash(npm run:*)",
-      "Bash(npm test:*)",
-      "Bash(git status)",
-      "Bash(git diff:*)",
-      "Bash(git log:*)",
-      "Bash(git add:*)",
-      "Bash(git commit:*)",
-      "Bash(git push)",
-      "Bash(git config:*)",
-      "Bash(git tag:*)",
-      "Bash(git branch:*)",
-      "Bash(git checkout:*)",
-      "Bash(git stash:*)",
-      "Bash(jq:*)",
-      "Bash(node:*)",
-      "Bash(which:*)",
-      "Bash(pwd)",
-      "Bash(ls:*)",
-      "Bash(npx:*)",
-      "mcp__claude-flow__*",
-      "mcp__ruv-swarm__*",
-      "mcp__flow-nexus__*"
-    ],
-    "deny": [
-      "Read(./.env)",
-      "Read(./.env.*)",
-      "Bash(rm -rf /)"
-    ]
-  },
   "hooks": {
     "PreToolUse": [
       {
@@ -47,7 +6,17 @@
         "hooks": [
           {
             "type": "command",
-            "command": "node \"$CLAUDE_PROJECT_DIR/.claude/helpers/hook-handler.cjs\" pre-bash",
+            "command": "cmd /c node %CLAUDE_PROJECT_DIR%/.claude/helpers/hook-handler.cjs pre-bash",
+            "timeout": 5000
+          }
+        ]
+      },
+      {
+        "matcher": "Write|Edit|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cmd /c node %CLAUDE_PROJECT_DIR%/.claude/helpers/hook-handler.cjs pre-edit",
             "timeout": 5000
           }
         ]
@@ -59,8 +28,18 @@
         "hooks": [
           {
             "type": "command",
-            "command": "node \"$CLAUDE_PROJECT_DIR/.claude/helpers/hook-handler.cjs\" post-edit",
+            "command": "cmd /c node %CLAUDE_PROJECT_DIR%/.claude/helpers/hook-handler.cjs post-edit",
             "timeout": 10000
+          }
+        ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cmd /c node %CLAUDE_PROJECT_DIR%/.claude/helpers/hook-handler.cjs post-bash",
+            "timeout": 5000
           }
         ]
       }
@@ -70,7 +49,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "node \"$CLAUDE_PROJECT_DIR/.claude/helpers/hook-handler.cjs\" route",
+            "command": "cmd /c node %CLAUDE_PROJECT_DIR%/.claude/helpers/hook-handler.cjs route",
             "timeout": 10000
           }
         ]
@@ -81,12 +60,12 @@
         "hooks": [
           {
             "type": "command",
-            "command": "node \"$CLAUDE_PROJECT_DIR/.claude/helpers/hook-handler.cjs\" session-restore",
+            "command": "cmd /c node %CLAUDE_PROJECT_DIR%/.claude/helpers/hook-handler.cjs session-restore",
             "timeout": 15000
           },
           {
             "type": "command",
-            "command": "node \"$CLAUDE_PROJECT_DIR/.claude/helpers/auto-memory-hook.mjs\" import",
+            "command": "cmd /c node %CLAUDE_PROJECT_DIR%/.claude/helpers/auto-memory-hook.mjs import",
             "timeout": 8000
           }
         ]
@@ -97,7 +76,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "node \"$CLAUDE_PROJECT_DIR/.claude/helpers/hook-handler.cjs\" session-end",
+            "command": "cmd /c node %CLAUDE_PROJECT_DIR%/.claude/helpers/hook-handler.cjs session-end",
             "timeout": 10000
           }
         ]
@@ -108,7 +87,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "node \"$CLAUDE_PROJECT_DIR/.claude/helpers/auto-memory-hook.mjs\" sync",
+            "command": "cmd /c node %CLAUDE_PROJECT_DIR%/.claude/helpers/auto-memory-hook.mjs sync",
             "timeout": 10000
           }
         ]
@@ -120,11 +99,11 @@
         "hooks": [
           {
             "type": "command",
-            "command": "node \"$CLAUDE_PROJECT_DIR/.claude/helpers/hook-handler.cjs\" compact-manual"
+            "command": "cmd /c node %CLAUDE_PROJECT_DIR%/.claude/helpers/hook-handler.cjs compact-manual"
           },
           {
             "type": "command",
-            "command": "node \"$CLAUDE_PROJECT_DIR/.claude/helpers/hook-handler.cjs\" session-end",
+            "command": "cmd /c node %CLAUDE_PROJECT_DIR%/.claude/helpers/hook-handler.cjs session-end",
             "timeout": 5000
           }
         ]
@@ -134,11 +113,11 @@
         "hooks": [
           {
             "type": "command",
-            "command": "node \"$CLAUDE_PROJECT_DIR/.claude/helpers/hook-handler.cjs\" compact-auto"
+            "command": "cmd /c node %CLAUDE_PROJECT_DIR%/.claude/helpers/hook-handler.cjs compact-auto"
           },
           {
             "type": "command",
-            "command": "node \"$CLAUDE_PROJECT_DIR/.claude/helpers/hook-handler.cjs\" session-end",
+            "command": "cmd /c node %CLAUDE_PROJECT_DIR%/.claude/helpers/hook-handler.cjs session-end",
             "timeout": 6000
           }
         ]
@@ -149,42 +128,68 @@
         "hooks": [
           {
             "type": "command",
-            "command": "node \"$CLAUDE_PROJECT_DIR/.claude/helpers/hook-handler.cjs\" status",
+            "command": "cmd /c node %CLAUDE_PROJECT_DIR%/.claude/helpers/hook-handler.cjs status",
             "timeout": 3000
           }
         ]
       }
     ],
-    "TeammateIdle": [
+    "SubagentStop": [
       {
         "hooks": [
           {
             "type": "command",
-            "command": "node \"$CLAUDE_PROJECT_DIR/.claude/helpers/hook-handler.cjs\" post-task",
+            "command": "cmd /c node %CLAUDE_PROJECT_DIR%/.claude/helpers/hook-handler.cjs post-task",
             "timeout": 5000
           }
         ]
       }
     ],
-    "TaskCompleted": [
+    "Notification": [
       {
         "hooks": [
           {
             "type": "command",
-            "command": "node \"$CLAUDE_PROJECT_DIR/.claude/helpers/hook-handler.cjs\" post-task",
-            "timeout": 5000
+            "command": "cmd /c node %CLAUDE_PROJECT_DIR%/.claude/helpers/hook-handler.cjs notify",
+            "timeout": 3000
           }
         ]
       }
     ]
   },
+  "statusLine": {
+    "type": "command",
+    "command": "sh -c 'exec node \"${CLAUDE_PROJECT_DIR:-.}/.claude/helpers/statusline.cjs\"'"
+  },
+  "permissions": {
+    "allow": [
+      "Bash(npx @claude-flow*)",
+      "Bash(npx claude-flow*)",
+      "Bash(node .claude/*)",
+      "mcp__claude-flow__:*"
+    ],
+    "deny": [
+      "Read(./.env)",
+      "Read(./.env.*)"
+    ]
+  },
   "attribution": {
     "commit": "Co-Authored-By: claude-flow <ruv@ruv.net>",
-    "pr": "\ud83e\udd16 Generated with [claude-flow](https://github.com/ruvnet/claude-flow)"
+    "pr": "🤖 Generated with [claude-flow](https://github.com/ruvnet/claude-flow)"
+  },
+  "env": {
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1",
+    "CLAUDE_FLOW_V3_ENABLED": "true",
+    "CLAUDE_FLOW_HOOKS_ENABLED": "true"
   },
   "claudeFlow": {
-    "version": "3.5.2",
+    "version": "3.0.0",
     "enabled": true,
+    "platform": {
+      "os": "windows",
+      "arch": "x64",
+      "shell": "powershell"
+    },
     "modelPreferences": {
       "default": "claude-opus-4-6",
       "routing": "claude-haiku-4-5-20251001"
@@ -215,14 +220,69 @@
     },
     "swarm": {
       "topology": "hierarchical-mesh",
-      "maxAgents": 15
+      "maxAgents": 15,
+      "autoSpawn": true
+    },
+    "marketing": {
+      "enabled": true,
+      "autopilot": true,
+      "queen": "marketing-coordinator",
+      "workers": [
+        "content-strategist",
+        "seo-specialist",
+        "outbound-specialist",
+        "conversion-optimizer",
+        "sales-intelligence",
+        "social-media-manager"
+      ],
+      "consensus": "weighted",
+      "cycles": {
+        "daily": {
+          "agents": ["outbound-specialist", "social-media-manager", "content-strategist"],
+          "tasks": [
+            "Check outbound campaign metrics, adjust sequences with low open rates",
+            "Publish scheduled social media content across all platforms",
+            "Score and publish any pending content pieces"
+          ]
+        },
+        "weekly": {
+          "agents": ["seo-specialist", "conversion-optimizer", "marketing-coordinator"],
+          "tasks": [
+            "Run keyword gap analysis and update content attack briefs",
+            "CRO audit on highest-traffic landing pages",
+            "Weekly KPI review and agent task reallocation"
+          ]
+        },
+        "biweekly": {
+          "agents": ["sales-intelligence"],
+          "tasks": [
+            "Update competitive matrix and pricing intelligence",
+            "Generate revenue attribution report",
+            "Refresh ICP data and buying signals"
+          ]
+        },
+        "monthly": {
+          "agents": ["marketing-coordinator", "sales-intelligence", "content-strategist"],
+          "tasks": [
+            "Full marketing performance review",
+            "Content calendar planning for next month",
+            "Pipeline health analysis and forecast"
+          ]
+        }
+      }
     },
     "memory": {
       "backend": "hybrid",
       "enableHNSW": true,
-      "learningBridge": { "enabled": true },
-      "memoryGraph": { "enabled": true },
-      "agentScopes": { "enabled": true }
+      "learningBridge": {
+        "enabled": true
+      },
+      "memoryGraph": {
+        "enabled": true
+      },
+      "agentScopes": {
+        "enabled": true
+      }
     },
     "neural": {
       "enabled": true
@@ -233,27 +293,68 @@
         "map",
         "audit",
         "optimize",
-        "consolidate",
-        "testgaps",
-        "ultralearn",
-        "deepdive",
-        "document",
-        "refactor",
-        "benchmark"
+        "content-publish",
+        "seo-optimize",
+        "outbound-send",
+        "cro-implement",
+        "sales-brief",
+        "social-publish",
+        "campaign-report"
       ],
       "schedules": {
-        "audit": { "interval": "1h", "priority": "critical" },
-        "optimize": { "interval": "30m", "priority": "high" },
-        "consolidate": { "interval": "2h", "priority": "low" },
-        "document": { "interval": "1h", "priority": "normal" },
-        "deepdive": { "interval": "4h", "priority": "normal" },
-        "ultralearn": { "interval": "1h", "priority": "normal" }
+        "audit": {
+          "interval": "4h",
+          "priority": "critical"
+        },
+        "optimize": {
+          "interval": "2h",
+          "priority": "high"
+        },
+        "content-publish": {
+          "interval": "24h",
+          "priority": "high",
+          "description": "Daily content production and publishing cycle"
+        },
+        "seo-optimize": {
+          "interval": "168h",
+          "priority": "high",
+          "description": "Weekly SEO keyword research and optimization"
+        },
+        "outbound-send": {
+          "interval": "24h",
+          "priority": "critical",
+          "description": "Daily outbound campaign execution and monitoring"
+        },
+        "cro-implement": {
+          "interval": "168h",
+          "priority": "high",
+          "description": "Weekly CRO audit and landing page optimization"
+        },
+        "sales-brief": {
+          "interval": "72h",
+          "priority": "critical",
+          "description": "Bi-weekly competitive intelligence and sales enablement update"
+        },
+        "social-publish": {
+          "interval": "8h",
+          "priority": "medium",
+          "description": "3x daily social media content distribution"
+        },
+        "campaign-report": {
+          "interval": "168h",
+          "priority": "high",
+          "description": "Weekly marketing KPI report and optimization"
+        }
       }
     },
     "learning": {
       "enabled": true,
       "autoTrain": true,
-      "patterns": ["coordination", "optimization", "prediction"],
+      "patterns": [
+        "coordination",
+        "optimization",
+        "prediction"
+      ],
       "retention": {
         "shortTerm": "24h",
         "longTerm": "30d"
@@ -275,31 +376,5 @@
       "cveCheck": true,
       "threatModel": true
     }
-  },
-  "agents": {
-    "source": ".claude/agents",
-    "customAgents": []
-  },
-  "skills": {
-    "source": ".claude/commands",
-    "enabled": true
-  },
-  "statusLine": {
-    "type": "command",
-    "command": "node \"$CLAUDE_PROJECT_DIR/.claude/helpers/statusline.cjs\""
-  },
-  "mcpServers": {
-    "claude-flow": {
-      "command": "node",
-      "args": [
-        "/workspaces/claude-flow/v3/@claude-flow/cli/bin/cli.js",
-        "mcp",
-        "start"
-      ]
-    }
-  },
-  "enabledMcpjsonServers": [
-    "claude-flow",
-    "ruv-swarm"
-  ]
+  }
 }

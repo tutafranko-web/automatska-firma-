@@ -1,0 +1,127 @@
+# RuFlo V3 Runtime Configuration
+# Generated: 2026-04-03T19:47:35.317Z
+
+version: "3.0.0"
+
+swarm:
+  topology: hierarchical-mesh
+  maxAgents: 15
+  autoScale: true
+  coordinationStrategy: consensus
+
+memory:
+  backend: hybrid
+  enableHNSW: true
+  persistPath: .claude-flow/data
+  cacheSize: 100
+  # ADR-049: Self-Learning Memory
+  learningBridge:
+    enabled: true
+    sonaMode: balanced
+    confidenceDecayRate: 0.005
+    accessBoostAmount: 0.03
+    consolidationThreshold: 10
+  memoryGraph:
+    enabled: true
+    pageRankDamping: 0.85
+    maxNodes: 5000
+    similarityThreshold: 0.8
+  agentScopes:
+    enabled: true
+    defaultScope: project
+
+neural:
+  enabled: true
+  modelPath: .claude-flow/neural
+
+hooks:
+  enabled: true
+  autoExecute: true
+
+mcp:
+  autoStart: false
+  port: 3000
+
+# Marketing Autopilot Configuration
+marketing:
+  enabled: true
+  autopilot: true
+
+  swarm:
+    queen: marketing-coordinator
+    topology: hierarchical-mesh
+    maxAgents: 7
+    consensus: weighted
+    autoSpawn: true
+    autoRecover: true
+
+  workers:
+    content-strategist:
+      schedule: "0 8 * * 1-5"      # Weekdays 8 AM
+      tasks:
+        - "Check content calendar, produce next scheduled piece"
+        - "Score pending content with 24-pattern checklist"
+        - "Run expert panel QA on completed pieces"
+      autoPublish: true
+
+    seo-specialist:
+      schedule: "0 7 * * 1"         # Monday 7 AM
+      tasks:
+        - "Weekly keyword gap analysis"
+        - "Update striking distance keywords (pos 4-20)"
+        - "Trend scouting across Reddit, HN, Google Trends"
+        - "Technical SEO health check"
+
+    outbound-specialist:
+      schedule: "0 9 * * 1-5"       # Weekdays 9 AM
+      tasks:
+        - "Monitor active campaign metrics"
+        - "A/B test subject line variants on underperforming sequences"
+        - "Add new prospects matching ICP signals"
+        - "Route hot leads (score 80+) to sales"
+
+    conversion-optimizer:
+      schedule: "0 10 * * 3"        # Wednesday 10 AM
+      tasks:
+        - "CRO audit on top 3 traffic landing pages"
+        - "Analyze funnel drop-off points"
+        - "Generate lead magnet from latest survey data"
+
+    sales-intelligence:
+      schedule: "0 8 * * 2,5"       # Tuesday and Friday 8 AM
+      tasks:
+        - "Update competitive matrix"
+        - "Analyze recent sales call transcripts"
+        - "Revenue attribution report"
+        - "Refresh ICP buying signals"
+
+    social-media-manager:
+      schedule: "0 7,12,17 * * 1-5" # 3x daily weekdays
+      tasks:
+        - "Publish next scheduled social posts"
+        - "Repurpose latest content into platform-specific pieces"
+        - "Monitor engagement, boost high-performers"
+        - "Respond to comments with brand templates"
+
+  kpis:
+    mqls_monthly: 200
+    organic_growth_pct: 15
+    content_score_min: 85
+    landing_page_cvr: 3.5
+    pipeline_quarterly: 500000
+    social_engagement: 4.0
+    campaign_roi: 5.0
+
+  alerts:
+    - metric: "outbound_reply_rate"
+      threshold: 0.03
+      below: true
+      action: "marketing-coordinator reviews and adjusts sequences"
+    - metric: "landing_page_cvr"
+      threshold: 0.02
+      below: true
+      action: "conversion-optimizer runs emergency CRO audit"
+    - metric: "content_score"
+      threshold: 70
+      below: true
+      action: "content-strategist rewrites with expert panel"
