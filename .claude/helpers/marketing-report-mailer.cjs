@@ -102,13 +102,13 @@ ${stats || 'No learning stats available'}
 ## KPI Targets vs Actual
 | KPI | Target | Status |
 |-----|--------|--------|
-| MQLs | 200/mo (50/wk) | Check CRM |
-| Organic Traffic | +15%/mo | Check GA4 |
+| Upiti za konzultaciju | 80/mj (20/tjedan) | Check CRM |
+| Organic Traffic | +20%/mj | Check GA4 |
 | Content Score | >85 | Check memory |
-| Landing Page CVR | >3.5% | Check analytics |
-| Pipeline Value | $500K/qtr | Check CRM |
-| Social Engagement | >4% | Check platforms |
-| Campaign ROI | >5x | Check attribution |
+| Besplatna konzultacija CVR | >5% | Check analytics |
+| Email outbound | 480/dan (12 subdomena) | Check n8n |
+| Social Engagement | >5% | Check platforms |
+| Industrije pokrivene | 20+ | Check content |
 
 ## Recommendations
 Review marketing memory for agent-generated insights:
