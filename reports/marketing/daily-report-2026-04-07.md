@@ -1,7 +1,6 @@
-# Dnevni Marketing Report - Opsis Dalmatia
-## 07. travnja 2026.
+# Dnevni Marketing Report - 7. travnja 2026.
+**Opsis Dalmatia | AI Digital Agency Split**
 
-**Agencija:** Opsis Dalmatia — AI Digital Agency Split, Hrvatska
 **Web:** opsisdalmatia.com
 **Datum izrade:** 07. travnja 2026.
 
