@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="{{lang}}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{{brand_name}} — Pitch za {{company_name}}</title>
+<meta name="description" content="Personalizirana pitch prezentacija za {{company_name}}. Chatbot, voice agent, automatizacija, SEO.">
+<meta name="theme-color" content="#020617">
+<link rel="icon" href="../_shared/assets/favicon.ico">
+<link rel="stylesheet" href="../_shared/pitch-deck.css">
+</head>
+<body>
+
+<nav class="slide-nav" aria-label="Navigacija slajdova">
+  <a href="#s1">01</a><a href="#s2">02</a><a href="#s3">03</a>
+  <a href="#s4">04</a><a href="#s5">05</a><a href="#s6">06</a>
+  <a href="#s7">07</a><a href="#s8">08</a><a href="#s9">09</a>
+  <a href="#s10">10</a>
+</nav>
+
+<!-- ============================================================
+     SLIDE 1 — COVER
+     ============================================================ -->
+<section class="slide cover" id="s1">
+  <div class="glow-blob sky"  style="top:-200px; right:-200px; width:700px; height:700px;"></div>
+  <div class="glow-blob amber" style="bottom:-250px; left:-150px; width:500px; height:500px;"></div>
+
+  <div class="cover-logo">
+    <img src="../_shared/assets/opsis-logo.webp" alt="Opsis Dalmatia logo">
+    <div class="mark"><b>OPSIS</b><span>DALMATIA</span></div>
+  </div>
+
+  <div class="cover-label">
+    <span class="caption">Pitch prezentacija — Osobno za</span>
+  </div>
+
+  <h1>
+    {{company_name}} <span class="text-gradient">×</span> Opsis Dalmatia
+  </h1>
+
+  <div class="cover-meta">
+    <div><span class="dot"></span>{{contact_name}}</div>
+    <div><span class="dot"></span>{{company_location}}</div>
+    <div><span class="dot"></span>{{date}}</div>
+  </div>
+
+  <span class="cover-tag">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+    Povećajte prihode — smanjite stres.
+  </span>
+</section>
+
+<!-- ============================================================
+     SLIDE 2 — SIGNALS
+     ============================================================ -->
+<section class="slide" id="s2">
+  <div class="slide-number">02 / 10</div>
+  <div class="glow-blob sky" style="top:10%; right:-200px; width:500px; height:500px;"></div>
+
+  <span class="badge">Uvid</span>
+  <h2 style="margin-top:16px;">3 stvari koje smo primijetili na vašem <span class="text-gradient">webu</span>.</h2>
+
+  <div class="signals">
+    <article class="signal">
+      <div class="signal-num">01</div>
+      <div class="signal-text">{{signal_1}}</div>
+    </article>
+    <article class="signal">
+      <div class="signal-num">02</div>
+      <div class="signal-text">{{signal_2}}</div>
+    </article>
+    <article class="signal">
+      <div class="signal-num">03</div>
+      <div class="signal-text">{{signal_3}}</div>
+    </article>
+  </div>
+
+  <div class="signals-footnote">Na temelju analize {{company_web}} · {{date}}</div>
+</section>
+
+<!-- ============================================================
+     SLIDE 3 — PAIN
+     ============================================================ -->
+<section class="slide pain" id="s3">
+  <div class="slide-number">03 / 10</div>
+  <div class="glow-blob amber" style="bottom:-150px; right:-150px; width:600px; height:600px;"></div>
+
+  <span class="badge amber">Izazov</span>
+  <h2 style="margin-top:20px;">{{pain_hook}}</h2>
+
+  <div class="pain-stats">
+    <div class="pain-stat">
+      <div class="pain-big">~{{pain_monthly_loss_eur}} €</div>
+      <div class="pain-label">Izgubljeno mjesečno</div>
+    </div>
+    <div class="pain-stat">
+      <div class="pain-big">~{{pain_missed_inquiries}}</div>
+      <div class="pain-label">Propuštenih upita / mj</div>
+    </div>
+    <div class="pain-stat">
+      <div class="pain-big">{{pain_time_hours}} h</div>
+      <div class="pain-label">Ručnog rada / tjedan</div>
+    </div>
+  </div>
+
+  <p class="pain-body">{{pain_body}}</p>
+</section>
+
+<!-- ============================================================
+     SLIDE 4 — CHATBOT (emerald accent)
+     ============================================================ -->
+<section class="slide accent-emerald" id="s4">
+  <div class="slide-number">04 / 10</div>
+  <div class="glow-blob sky" style="top:-100px; left:-150px; width:500px; height:500px;"></div>
+
+  <div class="solution-head">
+    <span class="badge">Rješenje 01</span>
+    <h2 style="margin-top:16px;">AI Chatbot — dok vi spavate, <span class="text-gradient">on radi</span>.</h2>
+  </div>
+
+  <div class="solution-grid">
+    <ul class="solution-features">
+      <li>Odgovara 24/7 na hrvatskom, engleskom, njemačkom, talijanskom, francuskom</li>
+      <li>Preuzima FAQ, rezervacije, termine, cijene — bez ljudskog rada</li>
+      <li>Integracija s vašim kalendarima i CRM-om</li>
+      <li>Uči iz svakog razgovora, tjedno postaje precizniji</li>
+    </ul>
+    <aside class="solution-proof">
+      <div class="caption">Primjer iz industrije</div>
+      <div class="proof-text">{{case_chatbot}}</div>
+    </aside>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 5 — VOICE AGENT (sky accent — default)
+     ============================================================ -->
+<section class="slide" id="s5">
+  <div class="slide-number">05 / 10</div>
+  <div class="glow-blob sky" style="top:10%; right:-200px; width:600px; height:600px;"></div>
+
+  <div class="solution-head">
+    <span class="badge">Rješenje 02</span>
+    <h2 style="margin-top:16px;">Voice Agent — telefon koji <span class="text-gradient">nikad ne spava</span>.</h2>
+  </div>
+
+  <div class="solution-grid">
+    <ul class="solution-features">
+      <li>Odgovara na pozive 24/7 (HR + EN) — prirodan glas, ne robotski</li>
+      <li>Daje informacije, rezervira termine, šalje SMS/mail potvrdu</li>
+      <li>Prepoznaje ton — hitne pozive prebacuje na vas</li>
+      <li>Bez govorne pošte koju nitko ne sluša</li>
+    </ul>
+    <aside class="solution-proof">
+      <div class="caption">Zašto baš sada</div>
+      <div class="proof-text">{{case_voice}}</div>
+    </aside>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 6 — AUTOMATIZACIJA (purple accent)
+     ============================================================ -->
+<section class="slide accent-purple" id="s6">
+  <div class="slide-number">06 / 10</div>
+  <div class="glow-blob purple" style="bottom:-200px; left:-100px; width:500px; height:500px;"></div>
+
+  <div class="solution-head">
+    <span class="badge">Rješenje 03</span>
+    <h2 style="margin-top:16px;">Automatizacija — 5 do 20 sati <span class="text-gradient">ušteđeno</span> mjesečno.</h2>
+  </div>
+
+  <div class="solution-grid">
+    <ul class="solution-features">
+      <li>3–5 ručnih procesa → automatski tok bez čekanja</li>
+      <li>Mailovi, fakture, follow-up, SMS reminders, CRM sync</li>
+      <li>Integrira postojeće alate (Excel, Sheets, booking sustav, Gmail)</li>
+      <li>Jedan workflow = 5–20 sati uštede mjesečno</li>
+    </ul>
+    <aside class="solution-proof">
+      <div class="caption">Preporuka za {{company_name}}</div>
+      <div class="proof-text">{{case_automation}}</div>
+    </aside>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 7 — SEO (amber accent)
+     ============================================================ -->
+<section class="slide accent-amber" id="s7">
+  <div class="slide-number">07 / 10</div>
+  <div class="glow-blob amber" style="top:-150px; right:-100px; width:500px; height:500px;"></div>
+
+  <div class="solution-head">
+    <span class="badge amber">Rješenje 04</span>
+    <h2 style="margin-top:16px;">SEO — da vas Google <span class="text-gradient">nađe prvi</span>.</h2>
+  </div>
+
+  <div class="solution-grid">
+    <ul class="solution-features">
+      <li>Tehnički audit: brzina, mobile, indeksiranje, structured data</li>
+      <li>On-page optimizacija — ključne riječi, naslovi, meta</li>
+      <li>4 članka mjesečno — odgovaraju na pitanja koja gosti Google-aju</li>
+      <li>Lokalni SEO (Google Business) za {{company_location}}</li>
+    </ul>
+    <aside class="solution-proof">
+      <div class="caption">Naš uvid</div>
+      <div class="proof-text">{{case_seo}}</div>
+    </aside>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 8 — PRICING (a-la-carte + bundle)
+     ============================================================ -->
+<section class="slide" id="s8">
+  <div class="slide-number">08 / 10</div>
+  <div class="glow-blob sky" style="top:-100px; left:-150px; width:500px; height:500px;"></div>
+
+  <div class="pricing-head">
+    <span class="badge">Cijene</span>
+    <h2 style="margin-top:16px;">Transparentno. <span class="text-gradient">Bez pretplata</span> na ono što ne trebate.</h2>
+  </div>
+
+  <div class="pricing-grid">
+    <article class="pricing-card">
+      <div class="service-name">
+        <h3>Chatbot Basic</h3>
+        <span class="tag">1 jezik</span>
+      </div>
+      <div class="price-row">
+        <span class="price">750 €</span>
+        <span class="price-unit">jednokratno</span>
+      </div>
+      <div class="price-sub">+ 49 €/mj hosting i updates</div>
+      <ul>
+        <li>FAQ, kontakt, osnovna rezervacija</li>
+        <li>Integracija s web stranicom</li>
+        <li>Hrvatski ili engleski</li>
+      </ul>
+    </article>
+
+    <article class="pricing-card">
+      <div class="service-name">
+        <h3>Chatbot Pro</h3>
+        <span class="tag">Multi-lang · CRM</span>
+      </div>
+      <div class="price-row">
+        <span class="price">1.500 €</span>
+        <span class="price-unit">jednokratno</span>
+      </div>
+      <div class="price-sub">+ 99 €/mj hosting i updates</div>
+      <ul>
+        <li>5+ jezika, napredna logika</li>
+        <li>CRM, booking sustav, Analytics</li>
+        <li>A/B testiranje, tjedna optimizacija</li>
+      </ul>
+    </article>
+
+    <article class="pricing-card">
+      <div class="service-name">
+        <h3>Voice Agent</h3>
+        <span class="tag">HR + EN · 24/7</span>
+      </div>
+      <div class="price-row">
+        <span class="price">1.500 €</span>
+        <span class="price-unit">jednokratno</span>
+      </div>
+      <div class="price-sub">+ 149 €/mj hosting i minute</div>
+      <ul>
+        <li>Prirodan glas (Croatian + English)</li>
+        <li>Rezervira, šalje SMS/mail potvrde</li>
+        <li>Prebacivanje na ljudsku osobu po potrebi</li>
+      </ul>
+    </article>
+
+    <article class="pricing-card">
+      <div class="service-name">
+        <h3>Automatizacija</h3>
+        <span class="tag">3–5 workflowa</span>
+      </div>
+      <div class="price-row">
+        <span class="price">2.000 €</span>
+        <span class="price-unit">jednokratno</span>
+      </div>
+      <div class="price-sub">+ 99 €/mj monitoring i fix</div>
+      <ul>
+        <li>n8n / Make workflows</li>
+        <li>Mail, CRM, Sheets, booking — spojeno</li>
+        <li>Dashboard s ušteđenim satima</li>
+      </ul>
+    </article>
+  </div>
+
+  <div class="pricing-bundle">
+    <div class="pricing-bundle-row">
+      <div>
+        <span class="badge amber">Bundle — najčešća kombinacija</span>
+        <h3 style="margin-top:12px;">Chatbot Pro + Voice Agent + Automatizacija</h3>
+        <div class="pricing-bundle-meta">Sve što vam treba da prestanete gubiti upite i sate. <strong style="color:var(--od-fg)">−15% popusta</strong> na bundle.</div>
+      </div>
+      <div class="pricing-bundle-price">
+        <div>
+          <span class="price-strike">5.000 €</span>
+          <span class="price text-gradient">4.250 €</span>
+        </div>
+        <div class="price-unit">+ 297 €/mj (sve hosting + monitoring)</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pricing-footnote">SEO retainer se dogovara posebno — 699 €/mj (audit + on-page + 4 članka/mj) ili 1.999 € jednokratni audit s 3-mjesečnim planom. Sve cijene bez PDV-a.</div>
+</section>
+
+<!-- ============================================================
+     SLIDE 9 — RECOMMENDATION + ROI
+     ============================================================ -->
+<section class="slide reco" id="s9">
+  <div class="slide-number">09 / 10</div>
+  <div class="glow-blob sky"    style="top:-100px; right:-200px; width:600px; height:600px;"></div>
+  <div class="glow-blob amber"  style="bottom:-150px; left:-100px; width:400px; height:400px;"></div>
+
+  <span class="badge amber">Naša preporuka za vas</span>
+  <h2>{{recommended_tier}}</h2>
+  <p class="reco-lead">{{recommended_tier_reason}}</p>
+
+  <div class="roi-grid">
+    <article class="roi-item">
+      <div class="roi-label">Godišnja ušteda</div>
+      <div class="roi-value gradient">~{{roi_annual_savings_eur}} €</div>
+    </article>
+    <article class="roi-item">
+      <div class="roi-label">Povrat investicije</div>
+      <div class="roi-value gradient">~{{roi_payback_months}} mj</div>
+    </article>
+    <article class="roi-item">
+      <div class="roi-label">Više upita / rezervacija</div>
+      <div class="roi-value gradient">+{{roi_inquiries_uplift_pct}} %</div>
+    </article>
+  </div>
+
+  <p class="reco-note">{{recommended_tier_note}}</p>
+</section>
+
+<!-- ============================================================
+     SLIDE 10 — CTA
+     ============================================================ -->
+<section class="slide cta" id="s10">
+  <div class="slide-number">10 / 10</div>
+  <div class="glow-blob sky"   style="top:15%; left:-200px; width:700px; height:700px;"></div>
+  <div class="glow-blob amber" style="bottom:-150px; right:-100px; width:500px; height:500px;"></div>
+
+  <span class="badge">Sljedeći korak</span>
+  <h2 style="margin-top:20px;">Besplatna <span class="text-gradient">AI Revizija</span>. Bez obveze.</h2>
+  <p class="cta-sub">15 minuta. Pokažemo kako točno ovo izgleda u vašem poslu. Konkretni brojevi. Bez prodajnih fraza.</p>
+
+  <div>
+    <a class="cta-button" href="{{cta_url}}">
+      Zatražite besplatnu AI Reviziju
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+    </a>
+    <div class="cta-phone">ili nazovite <strong>{{cta_phone}}</strong></div>
+  </div>
+
+  <div class="cta-sign">
+    <div class="mark">{{brand_name}}</div>
+    <div class="sub">AI Digitalna Agencija · Split · Hrvatska</div>
+  </div>
+</section>
+
+<footer class="deck-footer">
+  <span>{{brand_name}} · {{date}}</span>
+  <span>Pripremljeno za: {{company_name}}</span>
+  <span>pitch-id: {{pitch_id}}</span>
+</footer>
+
+</body>
+</html>

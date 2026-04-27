@@ -3,6 +3,15 @@
 !/memory/sessions/README.md
 !bin/claude-flow
 !v3/@claude-flow/
+
+# Pitch generator — auto-populated shared folder (regenerated on every run)
+reports/pitches/_shared/
+# Brand binary assets — distributed via "Opsis Dalmatia Design System.zip", not git
+.claude/skills/marketing-team/templates/fonts/
+.claude/skills/marketing-team/templates/assets/
+# Local brand kit working dir
+_brand/
+
 # Binaries
 # Build outputs
 
