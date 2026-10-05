@@ -36,7 +36,7 @@
 
 ### ✅ Preporuka 3: Contactiraj 5 Split/Dalmacija poduzetnika direktno
 **Zašto:** Organski LinkedIn doseg je ograničen. Osobna poruka konvertira 8-10x bolje od objavljivanja.  
-**Akcija:** Pronađi 5 vlasnika/direktora SMB tvrtki u Splitu na LinkedIn-u (restoran, hotel, odvjetništvo, klinika, građevina). Pošalji kratku poruku: "Vidio/la sam da ste aktivni na LinkedIn-u — radite li već nešto s AI automatizacijom? Pitam jer radimo s nekoliko tvrtki iz [industrije] u Dalmaciji i rezultati su zanimljivi."  
+**Akcija:** Pronađi 5 vlasnika/direktora SMB tvrtki u Splitu na LinkedIn-u (restoran, hotel, odvjetništvo, klinika, građevina). Pošalji kratku poruku.  
 **KPI:** 5 poruka danas, cilj 2 odgovora unutar 72h.
 
 ---
@@ -44,8 +44,6 @@
 ## 3. Dva Gotova LinkedIn Posta
 
 ### POST #1 — EU AI Act: Što to znači za vas?
-
----
 
 **Koristite chatbot na web stranici?**
 **Šaljete automatizirane emailove?**
@@ -79,8 +77,6 @@ Povećajte prihode i smanjite stres — s AI koji radi za vas, ne umjesto vas.
 
 ### POST #2 — "Zašto moj konkurent ima više vremena od mene?"
 
----
-
 Sreo sam direktora hotela iz Splita prošli tjedan.
 
 Kaže mi: "Imate vi neku čaroliju? Moj konkurent s Hvara je manji od mene, a nekako stiže sve — marketing, rezervacije, recenzije, tim. Ja jedva dišem."
@@ -91,10 +87,6 @@ Odgovor koji sam mu dao?
 
 Dok on svaki dan ručno odgovara na 40 emailova, njegovi konkurenti imaju AI agente koji to rade za 4 sekunde.
 
-Dok on čeka grafičara za svaki post, AI generira 10 varijanti za testiranje za 2 minute.
-
-Dok on sjedi na sastanku koji je mogao biti email, njegovi procesi se odvijaju automatski.
-
 Ovo nije budućnost. Ovo je **ono što se događa u Dalmaciji sada**, kod poduzetnika koji su se usudili probati.
 
 3 procesa koja se najbrže automatiziraju u turizmu i uslugama:
@@ -102,11 +94,7 @@ Ovo nije budućnost. Ovo je **ono što se događa u Dalmaciji sada**, kod poduze
 ✅ Objavljivanje sadržaja na društvenim mrežama  
 ✅ Praćenje recenzija i automatski zahvale/odgovori
 
-Mi u Opsis Dalmatia smo specijalizirani za upravo ovo.
-
 Ne prodajemo tehnologiju — **implementiramo rezultate**.
-
-Ako ste ikad rekli "nema vremena" — to je točno naš klijent.
 
 📩 Dogovorite besplatnu konzultaciju:  
 👉 opsisdalmatia.com/besplatna-konzultacija
@@ -120,23 +108,12 @@ Povećajte prihode i smanjite stres.
 ## Metrika i Praćenje
 
 | KPI | Cilj (ovaj tjedan) | Cilj (ovaj mjesec) |
-|-----|-------------------|--------------------||
+|-----|-------------------|--------------------|
 | LinkedIn impresije | 2.000+ | 20.000+ |
 | Reakcije/komentari | 50+ | 400+ |
 | Klikovi na CTA | 15+ | 80+ |
 | Besplatne konzultacije | 3+ | 20+ |
 | Novi upiti | 5+ | 80 |
-
----
-
-## Izvori
-
-- [Umjetna inteligencija u Hrvatskoj 2026: Od popularnosti do praktične primjene](https://org.com.hr/umjetna-inteligencija-u-hrvatskoj-2026-od-popularnosti-do-prakticne-primjene/)
-- [AI automatizacija poslovnih procesa — riot.hr](https://riot.hr/ai-automatizacija/)
-- [Digitalni marketing 2026: AI agenti i personalizacija — Slavonika IT](https://www.slavonika-va.hr/digitalni-marketing-2026-kako-ai-agenti-i-personalizacija-mijenjaju-pravila-igre-za-poduzetnike/)
-- [EU AI Act i Prompt Registar u Hrvatskoj 2026](https://www.digitalmatrix.hr/eu-ai-act-prompt-registar-hrvatska)
-- [LinkedIn Content Trends 2026](https://www.linkedfusion.io/blogs/linkedin-content-trends/)
-- [AI u hrvatskom gospodarstvu — tportal.hr](https://www.tportal.hr/tehno/clanak/ai-u-hrvatskom-gospodarstvu-pravi-pomak-dolazi-tek-kad-ponovno-zamislimo-poslovne-procese-foto-20260922)
 
 ---
 
